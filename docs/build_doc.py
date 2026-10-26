@@ -10,7 +10,7 @@ def center(t, size=12, bold=False):
     r = p.add_run(t); r.bold = bold; r.font.size = Pt(size)
 center("PROJECT IN AUTOMATA AND LANGUAGE THEORY", 14, True)
 center("GENDER NEUTRAL LANGUAGE RECOGNIZER", 18, True)
-center("\nSubmitted by:"); center("Denver Ugay", 12, True); center("BSCS 3B")
+center("\nSubmitted by:"); [center(n, 12, True) for n in ["Denver Ugay","Lean Naive","Rovilyn Castrodes","Krisha Joyce Gulay"]]; center("BSCS 3B")
 center("\nSubmitted to:"); center("ALMA MAE B. AUXTERO", 12, True); center("Instructor")
 center("\nDate submitted: October 26, 2026")
 d.add_page_break()
@@ -68,9 +68,12 @@ shot("empty.png", "Figure 5. Test 4: empty file.", 5.5)
 shot("unsup.png", "Figure 6. Test 5: unsupported file format.", 5.5)
 
 d.add_heading("5 Conclusion", 1)
-d.add_paragraph("I completed a working gender-neutral language recognizer that uses a trie-based finite automaton to detect predefined terms case-insensitively and as whole words, then reports counts and suggested alternatives. I learned how a dictionary of words can be converted into a DFA and how word-boundary checks prevent false matches such as \"he\" in \"the\". Limitations: the dictionary is fixed and small, pronouns such as \"he\" and \"she\" are flagged even when they refer to a specific person, plural or irregular forms (e.g. \"policemen\") are not included, and suggestions need human review because the right replacement depends on context.")
+d.add_paragraph("We completed a working gender-neutral language recognizer that uses a trie-based finite automaton to detect predefined terms case-insensitively and as whole words, then reports counts and suggested alternatives. We learned how a dictionary of words can be converted into a DFA and how word-boundary checks prevent false matches such as \"he\" in \"the\". Limitations: the dictionary is fixed and small, pronouns such as \"he\" and \"she\" are flagged even when they refer to a specific person, plural or irregular forms (e.g. \"policemen\") are not included, and suggestions need human review because the right replacement depends on context.")
 
 d.add_heading("6 Sources and contributions", 1)
 d.add_paragraph("References: course notes on finite automata; mammoth.js (docx reading) and pdf.js (PDF reading) via cdnjs. AI assistance: Claude (Anthropic) was used to help build and test the application and draft this document.")
-d.add_paragraph("Contribution: Denver Ugay (BSCS 3B) – individual project: design, implementation, testing and documentation.")
+t = d.add_table(rows=1, cols=2); t.style = 'Table Grid'
+t.rows[0].cells[0].text = "Member"; t.rows[0].cells[1].text = "Contribution"
+for n in ["Denver Ugay","Lean Naive","Rovilyn Castrodes","Krisha Joyce Gulay"]:
+    c = t.add_row().cells; c[0].text = n; c[1].text = "[Describe contribution]"
 d.save("Gender_Neutral_Language_Recognizer_Documentation.docx")
