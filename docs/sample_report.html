@@ -1,0 +1,27 @@
+<meta charset="utf-8"><style>
+body{font:14px/1.7 Calibri,Arial,sans-serif;margin:40px;color:#13231d}
+h1{color:#163b32} h2{margin-top:0;color:#147b68}
+pre{white-space:pre-wrap;font:14px/1.7 Consolas,monospace;background:#fbfcfa;border:1px solid #dce4dc;padding:16px;border-radius:8px}
+mark{background:#ffe0d7;border-radius:3px} sup{color:#147b68;font-weight:700}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid #dce4dc;padding:6px 10px;text-align:left}th{background:#e7f8ec}
+.pb{page-break-before:always}</style>
+<h1>Gender Neutral Language Recognizer</h1><p>Sample document: <b>sample.txt</b> · Denver Ugay, BSCS 3B</p>
+<h2>1. Unprocessed (input)</h2><pre>The chairman opened the meeting and thanked the policeman and the fireman
+who helped during the storm. A stewardess on the flight said mankind owes
+much to rescue workers.
+
+The Chairman asked every salesman to share the report. The company needs
+more manpower, and the CHAIRMAN agreed. Ladies and gentlemen, the waitress
+will bring dessert. She will return after the meeting.
+</pre>
+<div class="pb"></div><h2>2. Processed (output)</h2>
+<p>12 matches · 10 unique terms</p>
+<table><tr><th>Term</th><th>Count</th><th>Suggested alternative</th></tr><tr><td><b>chairman</b></td><td>3</td><td>chairperson</td></tr><tr><td><b>policeman</b></td><td>1</td><td>police officer</td></tr><tr><td><b>fireman</b></td><td>1</td><td>firefighter</td></tr><tr><td><b>stewardess</b></td><td>1</td><td>flight attendant</td></tr><tr><td><b>mankind</b></td><td>1</td><td>humankind</td></tr><tr><td><b>salesman</b></td><td>1</td><td>salesperson</td></tr><tr><td><b>manpower</b></td><td>1</td><td>workforce</td></tr><tr><td><b>ladies and gentlemen</b></td><td>1</td><td>everyone</td></tr><tr><td><b>waitress</b></td><td>1</td><td>server</td></tr><tr><td><b>she</b></td><td>1</td><td>they</td></tr></table>
+<h2 style="margin-top:24px">Highlighted text with suggestions</h2><pre>The <mark>chairman</mark><sup>→ chairperson</sup> opened the meeting and thanked the <mark>policeman</mark><sup>→ police officer</sup> and the <mark>fireman</mark><sup>→ firefighter</sup>
+who helped during the storm. A <mark>stewardess</mark><sup>→ flight attendant</sup> on the flight said <mark>mankind</mark><sup>→ humankind</sup> owes
+much to rescue workers.
+
+The <mark>Chairman</mark><sup>→ chairperson</sup> asked every <mark>salesman</mark><sup>→ salesperson</sup> to share the report. The company needs
+more <mark>manpower</mark><sup>→ workforce</sup>, and the <mark>CHAIRMAN</mark><sup>→ chairperson</sup> agreed. <mark>Ladies and gentlemen</mark><sup>→ everyone</sup>, the <mark>waitress</mark><sup>→ server</sup>
+will bring dessert. <mark>She</mark><sup>→ they</sup> will return after the meeting.
+</pre>
