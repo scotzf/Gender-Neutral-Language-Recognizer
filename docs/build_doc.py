@@ -72,8 +72,5 @@ d.add_paragraph("We completed a working gender-neutral language recognizer that 
 
 d.add_heading("6 Sources and contributions", 1)
 d.add_paragraph("References: course notes on finite automata; mammoth.js (docx reading) and pdf.js (PDF reading) via cdnjs. AI assistance: Claude (Anthropic) was used to help build and test the application and draft this document.")
-t = d.add_table(rows=1, cols=2); t.style = 'Table Grid'
-t.rows[0].cells[0].text = "Member"; t.rows[0].cells[1].text = "Contribution"
-for n in ["Denver Ugay","Lean Naive","Rovilyn Castrodes","Krisha Joyce Gulay"]:
-    c = t.add_row().cells; c[0].text = n; c[1].text = "[Describe contribution]"
+d.add_paragraph("Contribution: Denver Ugay, Lean Naive, Rovilyn Castrodes and Krisha Joyce Gulay (BSCS 3B) – group project: design, implementation, testing and documentation.")
 d.save("Gender_Neutral_Language_Recognizer_Documentation.docx")
